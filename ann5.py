@@ -1,0 +1,68 @@
+import numpy as np
+
+input_pattern1 = np.array([1,-1,-1,1,-1,-1]).reshape(6,1)
+input_pattern2 = np.array([1,1,-1,1,1,-1]).reshape(6,1)
+input_pattern3 = np.array([-1,1,-1,1,-1,1]).reshape(6,1)
+input_pattern4 = np.array([1,-1,1,1,-1,1]).reshape(6,1)
+
+
+output_pattern1 = np.array([1,-1,-1]).reshape(3,1)
+output_pattern2 = np.array([1,1,-1]).reshape(3,1)
+output_pattern3 = np.array([-1,1,-1]).reshape(3,1)
+output_pattern4 = np.array([1,-1,1]).reshape(3,1)
+
+
+weight1 = output_pattern1@input_pattern1.T
+weight2 = output_pattern2@input_pattern2.T
+weight3 = output_pattern3@input_pattern3.T
+weight4 = output_pattern4@input_pattern4.T
+
+print("Weight1 : \n",weight1)
+print("\nWeight2 : \n",weight2)
+print("\nWeight3 : \n",weight3)
+print("\nWeight4 : \n",weight4)
+
+def sigmoid(temp):
+  pattern = []
+  for i in temp:
+    if i > 0:
+      pattern.append(1)
+    else:
+      pattern.append(-1)
+
+  return pattern
+
+
+temp1 = weight1@input_pattern1
+print(temp1)
+temp2 = weight2@input_pattern2
+print(temp2)
+temp3 = weight3@input_pattern3
+print(temp3)
+temp4 = weight4@input_pattern4
+print(temp4)
+
+
+print("Pattern obtained for 1st input : ",sigmoid(temp1))
+print("Pattern obtained for 2nd input : ",sigmoid(temp2))
+print("Pattern obtained for 3rd input : ",sigmoid(temp3))
+print("Pattern obtained for 4th input : ",sigmoid(temp4))
+
+
+#For Obtaining the sequence of input
+
+temp5 = weight1.T@output_pattern1
+print(temp5)
+temp6 = weight2.T@output_pattern2
+print(temp6)
+temp7 = weight3.T@output_pattern3
+print(temp7)
+temp8 = weight4.T@output_pattern4
+print(temp8)
+
+
+
+print("Sequence obtained for 1st pattern : ",sigmoid(temp5))
+print("Sequence obtained for 2nd pattern : ",sigmoid(temp6))
+print("Sequence obtained for 3rd pattern : ",sigmoid(temp7))
+print("Sequence obtained for 4th pattern : ",sigmoid(temp8))
