@@ -12,10 +12,10 @@ output_pattern3 = np.array([-1,1,-1]).reshape(3,1)
 output_pattern4 = np.array([1,-1,1]).reshape(3,1)
 
 
-weight1 = output_pattern1@input_pattern1.T
-weight2 = output_pattern2@input_pattern2.T
-weight3 = output_pattern3@input_pattern3.T
-weight4 = output_pattern4@input_pattern4.T
+weight1 = input_pattern1@output_pattern1.T
+weight2 = input_pattern2@output_pattern2.T
+weight3 = input_pattern3@output_pattern3.T
+weight4 = input_pattern4@output_pattern4.T
 
 print("Weight1 : \n",weight1)
 print("\nWeight2 : \n",weight2)
@@ -33,13 +33,13 @@ def sigmoid(temp):
   return pattern
 
 
-temp1 = weight1@input_pattern1
+temp1 = weight1.T@input_pattern1
 print(temp1)
-temp2 = weight2@input_pattern2
+temp2 = weight2.T@input_pattern2
 print(temp2)
-temp3 = weight3@input_pattern3
+temp3 = weight3.T@input_pattern3
 print(temp3)
-temp4 = weight4@input_pattern4
+temp4 = weight4.T@input_pattern4
 print(temp4)
 
 
@@ -51,13 +51,13 @@ print("Pattern obtained for 4th input : ",sigmoid(temp4))
 
 #For Obtaining the sequence of input
 
-temp5 = weight1.T@output_pattern1
+temp5 = weight1@output_pattern1
 print(temp5)
-temp6 = weight2.T@output_pattern2
+temp6 = weight2@output_pattern2
 print(temp6)
-temp7 = weight3.T@output_pattern3
+temp7 = weight3@output_pattern3
 print(temp7)
-temp8 = weight4.T@output_pattern4
+temp8 = weight4@output_pattern4
 print(temp8)
 
 
