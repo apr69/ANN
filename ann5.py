@@ -22,7 +22,7 @@ print("\nWeight2 : \n",weight2)
 print("\nWeight3 : \n",weight3)
 print("\nWeight4 : \n",weight4)
 
-def sigmoid(temp):
+def sign(temp):
   pattern = []
   for i in temp:
     if i > 0:
