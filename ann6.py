@@ -45,7 +45,19 @@ for epoch in range(epochs):
     
     loss = np.mean(np.square(targets - output))
 
+
 test_input = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
 hidden_output, predictions = forward_propagation(test_input, wih, bih, who, bho)
 print("Predictions after training:")
 print(np.round(predictions).astype(int))
+
+
+
+
+difference = targets - predictions
+accuracy = 0
+for i in range(len(difference)):
+    accuracy += difference[i][0]
+
+accuracy = (1 + accuracy/len(difference))*100
+print("Average Accuracy of predictions: ",accuracy)
