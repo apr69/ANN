@@ -43,10 +43,10 @@ temp4 = weight4.T@input_pattern4
 print(temp4)
 
 
-print("Pattern obtained for 1st input : ",sigmoid(temp1))
-print("Pattern obtained for 2nd input : ",sigmoid(temp2))
-print("Pattern obtained for 3rd input : ",sigmoid(temp3))
-print("Pattern obtained for 4th input : ",sigmoid(temp4))
+print("Pattern obtained for 1st input : ",sign(temp1))
+print("Pattern obtained for 2nd input : ",sign(temp2))
+print("Pattern obtained for 3rd input : ",sign(temp3))
+print("Pattern obtained for 4th input : ",sign(temp4))
 
 
 #For Obtaining the sequence of input
@@ -62,7 +62,7 @@ print(temp8)
 
 
 
-print("Sequence obtained for 1st pattern : ",sigmoid(temp5))
-print("Sequence obtained for 2nd pattern : ",sigmoid(temp6))
-print("Sequence obtained for 3rd pattern : ",sigmoid(temp7))
-print("Sequence obtained for 4th pattern : ",sigmoid(temp8))
+print("Sequence obtained for 1st pattern : ",sign(temp5))
+print("Sequence obtained for 2nd pattern : ",sign(temp6))
+print("Sequence obtained for 3rd pattern : ",sign(temp7))
+print("Sequence obtained for 4th pattern : ",sign(temp8))
